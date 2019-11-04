@@ -19,7 +19,7 @@ Plugin 'vim-airline/vim-airline-themes'	"Plugin for status/tabline themes
 Plugin 'tpope/vim-fugitive'				"Plugin for adding git features to vim
 Plugin 'godlygeek/tabular'				"Arrange sections of vim file in Tabular way
 Plugin 'ervandew/supertab'				"Code completion using Tab
-"Plugin 'davidhalter/jedi-vim' 			"Jedi auto-complete vim
+Plugin 'davidhalter/jedi-vim' 			"Jedi auto-complete vim
 Plugin 'avakhov/vim-yaml'               "YAML syntax for VIM
 Plugin 'chase/vim-ansible-yaml'         "YAML plugin for ansible
 Plugin 'nathanaelkane/vim-indent-guides' "Plugin for indentation guide
