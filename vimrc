@@ -19,13 +19,13 @@ Plugin 'vim-airline/vim-airline-themes'	"Plugin for status/tabline themes
 Plugin 'tpope/vim-fugitive'				"Plugin for adding git features to vim
 Plugin 'godlygeek/tabular'				"Arrange sections of vim file in Tabular way
 Plugin 'ervandew/supertab'				"Code completion using Tab
-Plugin 'davidhalter/jedi-vim' 			"Jedi auto-complete vim
+"Plugin 'davidhalter/jedi-vim' 			"Jedi auto-complete vim
 Plugin 'avakhov/vim-yaml'               "YAML syntax for VIM
 Plugin 'chase/vim-ansible-yaml'         "YAML plugin for ansible
 Plugin 'nathanaelkane/vim-indent-guides' "Plugin for indentation guide
 Plugin 'hiphish/jinja.vim'
-"Plugin 'scrooloose/nerdtree' 			"nerdtree plugin
 Plugin 'Yggdroot/indentLine'            "Indentation display plugin
+"Plugin 'scrooloose/nerdtree' 			"nerdtree plugin
 
 set completeopt-=preview 				"Disable preview
 
@@ -41,7 +41,6 @@ set tabstop=4			                " when indenting with '>', use 4 spaces width
 set shiftwidth=4 		                " On pressing tab, insert 4 spaces
 set expandtab
 colorscheme angr		                "select colorscheme from .vim/colors/
-"colorscheme focuspoint                  "testing new colorscheme
 set background=dark                    "for the dark version
 syntax enable			                "Enable Syntax processing
 set bs=indent,eol,start     	        "Backspace over everything in insert mode
