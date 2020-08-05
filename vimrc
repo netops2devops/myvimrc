@@ -28,14 +28,23 @@ Plugin 'vim-airline/vim-airline-themes'	"Plugin for status/tabline themes
 Plugin 'tpope/vim-fugitive'				"Plugin for adding git features to vim
 Plugin 'godlygeek/tabular'				"Arrange sections of vim file in Tabular way
 Plugin 'ervandew/supertab'				"Code completion using Tab
+
 Plugin 'davidhalter/jedi-vim' 			"Jedi auto-complete vim 
+let g:jedi#force_py_version = "3.8"
+let g:jedi#show_call_signatures = "0"
+
 Plugin 'avakhov/vim-yaml'               "YAML syntax for VIM 
 Plugin 'chase/vim-ansible-yaml'         "YAML plugin for ansible 
 Plugin 'nathanaelkane/vim-indent-guides' "Plugin for indentation guide
 Plugin 'hiphish/jinja.vim'
 Plugin 'Yggdroot/indentLine'            "Indentation display plugin
-"Plugin 'scrooloose/nerdtree' 			"nerdtree plugin
-"Plugin 'nvie/vim-flake8'                "Syntax and style checker for Python
+Plugin 'scrooloose/nerdtree' 			"nerdtree plugin
+Plugin 'nvie/vim-flake8'                "Syntax and style checker for Python
+Plugin 'elzr/vim-json'                  "Syntax highlight for JSON
+Plugin 'hashivim/vim-vagrant'           "Syntax highlighting for Vagrant
+"Plugin 'tmhedberg/simpylfold'
+
+Plugin 'rightson/vim-p4-syntax'         "Syntax highlight for P4 language
 
 set completeopt-=preview 				"Disable preview
 
