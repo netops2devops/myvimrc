@@ -32,29 +32,6 @@ Plugin 'ervandew/supertab'				 "Code completion using Tab
 Plugin 'davidhalter/jedi-vim' 			 "Jedi auto-complete vim 
 let g:jedi#force_py_version = "3.8"
 let g:jedi#show_call_signatures = "0"
-set omnifunc=jedi#completions
-py3 << EOF
-import os.path
-import sys
-import vim
-import jedi
-if 'VIRTUAL_ENV' in os.environ:
-    base = os.environ['VIRTUAL_ENV']
-    site_packages = os.path.join(base, 'lib', 'python%s' %  sys.version[:3], 'site-packages')
-    prev_sys_path = list(sys.path)
-    import site
-    site.addsitedir(site_packages)
-    sys.real_prefix = sys.prefix
-    sys.prefix = base
-    # Move the added items to the front of the path:
-    new_sys_path = []
-    for item in list(sys.path):
-        if item not in prev_sys_path:
-           new_sys_path.append(item)
-           sys.path.remove(item)
-    sys.path[:0] = new_sys_path
-EOF
-
 
 "Plugin 'neoclide/coc.nvim', { 'branch': 'release' }
 
