@@ -5,10 +5,11 @@ filetype plugin indent on
 
 " Get the 2-space YAML as the default when hit carriage return after the colon
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
+au BufNewFile,BufRead *.yaml,*.yml so ~/.config/nvim/syntax/yaml.vim
 
 au BufNewFile,BufRead *.j2 set ft=jinja
-au BufNewFile,BufRead *.set,*.junos so ~/.vim/syntax/junos.vim
+au BufNewFile,BufRead *.j2 so ~/.config/nvim/syntax/jinja.vim
+au BufNewFile,BufRead *.set,*.junos so ~/.config/nvim/syntax/junos.vim
 
 au BufNewFile,BufRead *.py set tabstop=4
 au BufNewFile,BufRead *.py set softtabstop=4
