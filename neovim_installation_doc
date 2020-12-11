@@ -111,7 +111,7 @@ sudo mv squashfs-root /usr/local/ && sudo ln -s /usr/local/squashfs-root/AppRun 
 cd ~/.config
 mkdir nvim && cd nvim 
 git clone https://github.com/netops2devops/myvimrc.git
-cp -r myvimrc/ .
+cp -r myvimrc/* .
 
 # check jedi python installation path
 pip3 show jedi
@@ -125,3 +125,6 @@ pip3 show jedi
 
 # open nvim and run :PluginInstall 
 # Once completed install coc plugins inside neovim such as coc-python, coc-yaml, coc-tabnine etc...
+
+# Oh-my-Zsh installation 
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
