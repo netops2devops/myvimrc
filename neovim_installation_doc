@@ -1,0 +1,127 @@
+# update and install packages 
+
+apt update
+apt -y upgrade
+apt install -y zsh
+apt install -y wget
+apt install -y curl
+apt install -y git
+apt install -y sudo
+chsh -s $(which zsh)
+apt install -y python
+apt install -y python3
+apt install -y python3-pip
+apt install -y openssh-server
+apt install -y python3-distutils python3-dev
+apt install -y libncurses5-dev libncursesw5-dev
+pip3 install jedi
+
+
+# Clone vim and compile from source with Python3
+
+git clone https://github.com/vim/vim.git
+
+cd /home/username/vim && \
+./configure \
+--enable-perlinterp=yes \
+--enable-python3interp=yes \
+--enable-pythoninterp=yes \
+--enable-rubyinterp=yes \
+--enable-cscope \
+--enable-gui=auto \
+--enable-gtk2-check \
+--enable-gnome-check \
+--with-features=huge \
+--enable-multibyte \
+--with-python3-command=python3 && \
+make && sudo make install
+
+
+# Download vim package manager (vundle)
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+
+# Install coc-neovim dependencies (node.js and yarn)
+
+curl -sL install-node.now.sh | sudo bash
+curl --compressed -o- -L https://yarnpkg.com/install.sh | sudo bash
+
+
+### copy and paste the following into ~/.vimrc and run :PluginInstall inside vim
+
+set nocompatible               	         "be iMproved
+"filetype off                   	     "required!
+syntax on
+filetype plugin indent on
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'				 "let Vundle manage Vundle, required
+Plugin 'davidhalter/jedi-vim' 			 "Jedi auto-complete vim
+let g:jedi#force_py_version = "3.8"
+let g:jedi#show_call_signatures = "0"
+
+Plugin 'neoclide/coc.nvim'
+
+set completeopt-=preview 				 "Disable preview
+
+"All of your Plugins must be added before the following line
+call vundle#end()            	        "required line
+
+"autocmd vimenter * NERDTree
+set mouse=nicr
+filetype plugin indent on    	        "required line
+filetype indent on      	            "Load filetype-specific indent files
+set tabstop=4			                " when indenting with '>', use 4 spaces width
+set shiftwidth=4 		                " On pressing tab, insert 4 spaces
+set expandtab
+set autoindent
+set fileformat=unix
+
+set background=dark                    "for the dark version
+syntax enable			                "Enable Syntax processing
+set bs=indent,eol,start     	        "Backspace over everything in insert mode
+
+set number 			                    "set number lines
+set numberwidth=1	                	"set number width
+hi LineNr term=NONE		                "remove underline from vim numbers
+
+set incsearch           	            "search as characters are entered
+set hlsearch                        	"Highlight matches
+
+
+
+
+
+#### Install neovim 
+
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+
+./nvim.appimage --appimage-extract
+./squashfs-root/AppRun --version
+ 
+sudo mv squashfs-root /usr/local/ && sudo ln -s /usr/local/squashfs-root/AppRun /usr/local/bin/nvim  
+
+# under the .config dir, create nvim dir
+
+cd ~/.config
+mkdir nvim && cd nvim 
+git clone https://github.com/netops2devops/myvimrc.git
+cp -r myvimrc/ .
+
+# check jedi python installation path
+pip3 show jedi
+
+# copy the path into coc-settings.json
+
+{
+    "python.jediPath": "/path/to/jedi/package"
+}
+ 
+
+# open nvim and run :PluginInstall 
+# Once completed install coc plugins inside neovim such as coc-python, coc-yaml, coc-tabnine etc...
