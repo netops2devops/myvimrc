@@ -49,6 +49,9 @@ curl --compressed -o- -L https://yarnpkg.com/install.sh | sudo bash
 
 
 ### copy and paste the following into ~/.vimrc and run :PluginInstall inside vim
+#
+#
+#
 
 set nocompatible               	         "be iMproved
 "filetype off                   	     "required!
@@ -61,7 +64,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'				 "let Vundle manage Vundle, required
 Plugin 'davidhalter/jedi-vim' 			 "Jedi auto-complete vim
-let g:jedi#force_py_version = "3.8"
+"let g:jedi#force_py_version = "3.8"
 let g:jedi#show_call_signatures = "0"
 
 Plugin 'neoclide/coc.nvim'
@@ -92,9 +95,9 @@ hi LineNr term=NONE		                "remove underline from vim numbers
 set incsearch           	            "search as characters are entered
 set hlsearch                        	"Highlight matches
 
-
-
-
+#
+#
+#
 
 #### Install neovim 
 
@@ -116,7 +119,7 @@ cp -r myvimrc/* .
 # check jedi python installation path
 pip3 show jedi
 
-# copy the path into coc-settings.json
+# copy the location of jedi package into coc-settings.json
 
 {
     "python.jediPath": "/path/to/jedi/package"
