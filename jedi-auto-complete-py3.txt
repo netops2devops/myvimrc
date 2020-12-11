@@ -1,0 +1,7 @@
+!python3 -c "import sys; import django; print(sys.modules['django'])"
+
+!python3 -c "import sys; sys.path.append('/Users/kapil/.virtualenvs/env/lib/python3.8/site-packages/')"
+
+### To allow jedi auto-completion of modules in vim with Python 3.8 ###
+
+:let jedi#force_py_version=3.8
